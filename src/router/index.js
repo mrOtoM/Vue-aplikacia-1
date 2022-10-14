@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import TeamsList from '../components/teams/TeamsList.vue';
 import UsersList from '../components/users/UsersList.vue';
+import TeamMembers from '../components/teams/TeamMembers.vue';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/users',
     name: 'UsersList',
     component: UsersList,
+  },
+  {
+    path: '/teams/:teamId',
+    name: 'TeamMembers',
+    component: TeamMembers,
   },
 ];
 
