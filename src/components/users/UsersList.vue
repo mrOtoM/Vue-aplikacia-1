@@ -18,4 +18,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+ul {
+  list-style: none;
+  margin: 2rem auto;
+  max-width: 20rem;
+  padding: 0;
+}
+</style>
