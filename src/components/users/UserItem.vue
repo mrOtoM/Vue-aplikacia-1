@@ -1,13 +1,24 @@
 <template>
   <li>
     <h3>{{ name }}</h3>
-    <div>{{ role }}</div>
+    <div class="role" :class="roleClass">{{ role }}</div>
   </li>
 </template>
 
 <script>
 export default {
   props: ['name', 'role'],
+  computed: {
+    roleClass() {
+      if (this.role === 'Engineer') {
+        return 'role--engineer';
+      }
+      if (this.role === 'Consultant') {
+        return 'role--consultant';
+      }
+      return null;
+    },
+  },
 };
 </script>
 
