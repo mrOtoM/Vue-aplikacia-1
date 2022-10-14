@@ -1,9 +1,21 @@
 <template>
-  <h2>Users list</h2>
+  <ul>
+    <user-item
+      v-for="user in users"
+      :key="user.id"
+      :name="user.fullName"
+      :role="user.role"
+    ></user-item>
+  </ul>
 </template>
 
 <script>
-export default {};
+import UserItem from './UserItem.vue';
+
+export default {
+  components: { UserItem },
+  inject: ['users'],
+};
 </script>
 
 <style></style>
