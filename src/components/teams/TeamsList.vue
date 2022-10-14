@@ -1,9 +1,21 @@
 <template>
-  <h2>Teams list</h2>
+  <ul>
+    <teams-item
+      v-for="team in teams"
+      :key="team.id"
+      :name="team.name"
+      :member-count="team.members.length"
+    ></teams-item>
+  </ul>
 </template>
 
 <script>
-export default {};
+import TeamsItem from './TeamsItem.vue';
+
+export default {
+  components: { TeamsItem },
+  inject: ['teams'],
+};
 </script>
 
 <style></style>
