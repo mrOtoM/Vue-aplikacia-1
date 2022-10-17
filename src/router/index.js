@@ -8,6 +8,7 @@ const routes = [
     path: '/teams',
     name: 'TeamsList',
     component: TeamsList,
+    alias: '/',
   },
   {
     path: '/users',
@@ -19,6 +20,10 @@ const routes = [
     name: 'TeamMembers',
     component: TeamMembers,
     props: true,
+  },
+  {
+    path: '/:notFound(.*)',
+    redirect: '/teams',
   },
 ];
 
