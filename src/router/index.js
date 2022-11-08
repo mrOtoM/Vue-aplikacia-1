@@ -7,6 +7,14 @@ const routes = [
   {
     path: '/teams',
     name: 'TeamsList',
+    children: [
+      {
+        path: '/teams/:teamId',
+        name: 'TeamMembers',
+        component: TeamMembers,
+        props: true,
+      },
+    ],
     component: TeamsList,
     alias: '/',
   },
@@ -14,12 +22,6 @@ const routes = [
     path: '/users',
     name: 'UsersList',
     component: UsersList,
-  },
-  {
-    path: '/teams/:teamId',
-    name: 'TeamMembers',
-    component: TeamMembers,
-    props: true,
   },
   {
     path: '/:notFound(.*)',
