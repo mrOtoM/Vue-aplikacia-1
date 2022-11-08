@@ -49,6 +49,10 @@ export default {
   color: #2c3e50;
 }
 
+body {
+  background-color: aliceblue;
+}
+
 nav a {
   font-weight: bold;
   color: #2c3e50;
