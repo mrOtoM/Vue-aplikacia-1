@@ -52,7 +52,7 @@ a:hover,
 a:active,
 a.router-link-active {
   color: #d3eb1f;
-  border-color: #d3eb1f;
+  border-color: #c9df1f;
   background-color: #117b91;
 }
 </style>
