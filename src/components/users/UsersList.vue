@@ -1,4 +1,5 @@
 <template>
+  <button @click="confirmInput">Skusobne tlacidlo</button>
   <ul>
     <user-item
       v-for="user in users"
@@ -15,6 +16,21 @@ import UserItem from './UserItem.vue';
 export default {
   components: { UserItem },
   inject: ['users'],
+  methods: {
+    confirmInput() {
+      this.$router.push('/teams');
+    },
+  }, // Nav Guard
+  beforeRouteEnter(to, from, next) {
+    console.log('Userlist beforeRouterEnter');
+    console.log(to, from);
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('Userlis beforeRouteLeave');
+    console.log(to, from);
+    next();
+  },
 };
 </script>
 
