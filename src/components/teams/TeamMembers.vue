@@ -45,8 +45,8 @@ export default {
     this.loadTeamMebers(this.teamId);
   },
   watch: {
-    teamId(teamId) {
-      this.loadTeamMebers(newRoute);
+    teamId(newId) {
+      this.loadTeamMebers(newId);
     },
   },
 };
