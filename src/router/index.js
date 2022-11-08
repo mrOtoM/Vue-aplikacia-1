@@ -9,6 +9,7 @@ const routes = [
   {
     path: '/teams',
     name: 'TeamsList',
+    meta: { needsAccess: true }, // usable bewllow in nav Guard
     children: [
       {
         path: '/teams/:teamId',
@@ -53,6 +54,12 @@ const router = createRouter({
 router.beforeEach(function (to, from, next) {
   console.log('Global beforeEach');
   console.log(to, from);
+  // if (to.meta.needsAccess) {
+  //   console.log('Need access');
+  //   next();
+  // } else {
+  //   next();
+  // }
   // if (to.name === 'TeamMembers') {
   //   next();
   // } else {

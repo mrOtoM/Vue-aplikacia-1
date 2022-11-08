@@ -1,5 +1,6 @@
 <template>
   <button @click="confirmInput">Skusobne tlacidlo</button>
+  <button @click="saveChanges">Potvrdzovacie tlacidlo</button>
   <ul>
     <user-item
       v-for="user in users"
@@ -16,9 +17,15 @@ import UserItem from './UserItem.vue';
 export default {
   components: { UserItem },
   inject: ['users'],
+  data() {
+    return { changesSaved: false };
+  },
   methods: {
     confirmInput() {
       this.$router.push('/teams');
+    },
+    saveChanges() {
+      this.changesSaved = true;
     },
   }, // Nav Guard
   beforeRouteEnter(to, from, next) {
@@ -29,7 +36,12 @@ export default {
   beforeRouteLeave(to, from, next) {
     console.log('Userlis beforeRouteLeave');
     console.log(to, from);
-    next();
+    if (this.changesSaved) {
+      next();
+    } else {
+      const conf = confirm('Are you sure? you want to leave ?');
+      next(conf);
+    }
   },
 };
 </script>
